@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Psychic-Game</title>
+    <!-- <script src="./assets/javascripts/game.js"></script> -->
+
+
+</head>
+<body>
+    
+    <h1 id ="game-description"> The Psychic Game</h1>
+    <p id="text-description">Guess what letter I am thinking of:  </p>
+    <p id="wins"> Wins: </p>
+    <p id="losses"> Lossess: </p>
+    <p id="guessLeft"> Guess Left: </p>
+    <p id="userGuess"> Your Guesses so far: </p>
+
+    
+  <script>   
+ //  Need a var for random alphabet
+ var win = 0;
+ var loss = 0;
+ var guessLeft =9;
+ 
+ // computer guess letter
+ var randomNumber = Math.floor(Math.random()*26);
+ var randomChar = String.fromCharCode(97 + randomNumber);
+ //console.log(randomChar);
+
+ 
+ document.onkeypress = function(event) {
+ var userGuess= event.key;
+ do {
+     if(userGuess=== randomChar){
+         win++;
+     }
+     else{
+         guessLeft--;
+         loss++;
+     }
+     
+ } while (guessLeft<0);
+     
+     
+      
+        
+     
+    
+     
+
+     
+     document.getElementById('wins').innerHTML= "Wins: " + win;
+     document.getElementById('losses').innerHTML="Losses: "+ loss;
+     document.getElementById('guessLeft').innerHTML="Guess Left: "+ guessLeft;
+     document.getElementById('userGuess').innerHTML="Your Guesses so far: "+ userGuess;
+ 
+ 
+ //  var for win (initialize to 0)
+ //  var for loss (initialize to 0)
+ // var numberOFGuess; (initialize to 9)
+ //  var for userguess
+ //  create if else statement
+ // if (userguess==random albhabet){
+     // win++;
+ // }
+
+ // else{
+     // loss++;
+     // numberOfGuess--;
+ // }
+ // if(numberOfGuess == 0){
+     // reset ()
+ // }
+ // Create reset function
+ // reset function(){
+     
+ // }
+ }
+ 
+
+ </script>
+
+</body>
+</html>
