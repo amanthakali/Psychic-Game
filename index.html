@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <title>Psychic-Game</title>
-    <!-- <script src="./assets/javascripts/game.js"></script> -->
+   
   </head>
   <body>
     <h1 id="game-description">The Psychic Game</h1>
@@ -16,54 +21,6 @@
     <p id="guessLeft">Guess Left:</p>
     <p id="userGuess">Your Guesses so far:</p>
 
-    <script>
-      //  initializing the counts
-      var win = 0;
-      var loss = 0;
-      var guessLeft = 9;
-      var guessedLetter = [];
-
-      // computer guess letter
-
-      var randomNumber = Math.floor(Math.random() * 26);
-      var randomChar = String.fromCharCode(97 + randomNumber);
-      console.log('DEBUG random Word --- ' +randomChar);
-
-      //geting the user guess char in key press
-      document.onkeypress = function(event) {
-        var userGuess = event.key;
-        console.log(userGuess);
-
-        // main logic of the game
-
-        if (userGuess === randomChar) {
-          win++;
-          guessLeft = 9;
-          guessedLetter = [];
-        //randomChar = String.fromCharCode(97 + randomNumber);
-          // how to generate new random charater again???????
-        }
-        var randomNumber = Math.floor(Math.random() * 26);
-        randomChar = String.fromCharCode(97 + randomNumber);
-        console.log('DEBUG random Word --- ' +randomChar);
-        
-        
-        if (userGuess != randomChar) {
-          guessLeft--;
-          guessedLetter.push(userGuess);
-        }
-        if (guessLeft === 0) {
-          guessLeft = 9;
-          loss++;
-          guessedLetter = [];
-        }
-        document.getElementById("wins").innerHTML = "Wins: " + win;
-        document.getElementById("losses").innerHTML = "Losses: " + loss;
-        document.getElementById("guessLeft").innerHTML =
-          "Guess Left: " + guessLeft;
-        document.getElementById("userGuess").innerHTML =
-          "Your Guesses so far: " + guessedLetter.join(", ");
-      };
-    </script>
+    <script src="./assets/javascripts/game.js"></script>
   </body>
 </html>
